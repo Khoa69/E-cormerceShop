@@ -1,0 +1,35 @@
+.brand {
+    flex: 4;
+}
+
+.newBrandForm {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.newBrandForm > label {
+    font-weight: 600;
+    font-size: xx-large;
+    margin-right: 20px;
+}
+
+.newBrandInput {
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    margin-right: 20px;
+}
+
+.newBrandButton {
+    background-color: #d9dd6b;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-left: 20px;
+    height: 55px;
+}
+
+.brandDelete {
+    cursor: pointer;
+}

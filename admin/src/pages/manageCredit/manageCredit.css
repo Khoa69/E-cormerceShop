@@ -1,0 +1,141 @@
+.creditList {
+    flex: 4;
+}
+
+.creditListItem {
+    display: flex;
+    align-items: center;
+}
+
+.creditListImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.creditListEdit {
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.creditListDelete {
+    color: red;
+    cursor: pointer;
+}
+
+.creditHeader {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.creditHeaderTitle {
+    width: 15%;
+}
+
+.creditForm {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+}
+
+.creditForm > input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    /* margin-right: 20px; */
+}
+
+.creditForm > button {
+    background-color: #d9dd6b;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-right: 0.75rem;
+    cursor: pointer;
+}
+
+.credit {
+    flex: 4;
+    margin-left: 2rem;
+}
+
+.creditTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.creditContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.creditLeft {
+    flex: 1;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.creditRight {
+    flex: 1;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.creditFormUpdate {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.creditFormUpdate > button {
+    background-color: #d9dd6b;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.creditFormUpdateBalance {
+    display: flex;
+    padding: 1rem;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+}
+
+.creditFormUpdateBalance > label {
+    width: 200px;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.creditFormUpdateBalance > input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    display: block;
+}
+
+.creditFormUpdateBalance > button {
+    background-color: #d9dd6b;
+    border: none;
+    padding: 0px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}

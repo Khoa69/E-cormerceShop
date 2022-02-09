@@ -1,0 +1,70 @@
+.newPromotion {
+    flex: 4;
+    margin-left: 100px;
+}
+
+.promotion {
+    flex: 4;
+    margin-left: 60px;
+}
+
+.addPromotionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.addPromotionItem {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.btn {
+    border: none;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    /* margin-right: 10px; */
+}
+
+.addPromotionItem > label {
+    color: gray;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.addPromotionItem > input {
+    padding: 10px;
+}
+
+.addPromotionItem > textarea {
+    padding: 10px;
+}
+
+.addPromotionItem > select {
+    padding: 10px;
+}
+
+.addPromotionButton {
+    margin-top: 10px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.promotionDelete {
+    cursor: pointer;
+}
