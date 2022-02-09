@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.popup-content {
+    border-radius: 12px;
+}
+
+.userPage {
+    flex: 4;
+    padding: 20px;
+}
+
+.userUpdate {
+    flex: 2;
+}
