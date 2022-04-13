@@ -28,7 +28,7 @@ public class ProductService {
 	private PromotionRepository promotionRepository;
 	
 	public List<Product> getAllProduct() {
-		return productRepository.findAll();
+		return productRepository.findAllProduct();
 	}
 	
 	public Product convertFromProductDto(ProductDTO dto) {

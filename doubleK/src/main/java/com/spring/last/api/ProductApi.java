@@ -64,6 +64,18 @@ public class ProductApi {
 		return productService.getProductById(id);
 	}
 	
+	@DeleteMapping("/sortDelete/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<?> sortDeletedByID(@PathVariable long id,HttpServletRequest request) {
+		ResponseObject ro = new ResponseObject();
+		Product productByid =productService.getProductById(id);
+		productByid.setSortDelete(true);
+		productService.save(productByid);
+		ro.setStatus("deleted success");
+		return ResponseEntity.ok(new MessageResponse("deleted success"));
+	}
+	
+	
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> deletedByID(@PathVariable long id,HttpServletRequest request) {

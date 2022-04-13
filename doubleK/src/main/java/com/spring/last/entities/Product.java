@@ -37,6 +37,8 @@ public class Product {
 	private String color;
 	private String refreshRate;
 	
+	private Boolean sortDelete;
+	
 	@Transient
 	private List<MultipartFile> multipartFile;
 	
@@ -57,6 +59,40 @@ public class Product {
 	private Promotion promotion;
 	
 	
+	
+	public Product(long id, String productName, long price, int quantity, String description, String screen,
+			String operatingSystem, String cpu, String ram, String keyType, String color, String refreshRate,
+			Boolean sortDelete, List<MultipartFile> multipartFile, List<Image> imagelist, Category category,
+			Brand brand, Promotion promotion) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.price = price;
+		this.quantity = quantity;
+		this.description = description;
+		this.screen = screen;
+		this.operatingSystem = operatingSystem;
+		this.cpu = cpu;
+		this.ram = ram;
+		this.keyType = keyType;
+		this.color = color;
+		this.refreshRate = refreshRate;
+		this.sortDelete = sortDelete;
+		this.multipartFile = multipartFile;
+		this.imagelist = imagelist;
+		this.category = category;
+		this.brand = brand;
+		this.promotion = promotion;
+	}
+
+	public Boolean getSortDelete() {
+		return sortDelete;
+	}
+
+	public void setSortDelete(Boolean sortDelete) {
+		this.sortDelete = sortDelete;
+	}
+
 	public List<MultipartFile> getMultipartFile() {
 		return multipartFile;
 	}

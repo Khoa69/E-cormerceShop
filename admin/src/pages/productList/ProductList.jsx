@@ -16,7 +16,7 @@ function ProductList() {
 
     const handleDelete = async (id) => {
         await axios
-            .delete(`http://localhost:8080/doubleK/api/product/${id}`, {
+            .delete(`http://localhost:8080/doubleK/api/product/sortDelete/${id}`, {
                 headers: {
                     accept: "application/json",
                     Authorization: document?.cookie
