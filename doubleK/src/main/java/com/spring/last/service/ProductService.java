@@ -3,6 +3,9 @@ package com.spring.last.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.spring.last.dto.ProductDTO;
@@ -30,6 +33,14 @@ public class ProductService {
 	public List<Product> getAllProduct() {
 		return productRepository.findAllProduct();
 	}
+	
+	public Page<Product> getPageProduct(long index) {
+		int start = (int) (index);
+		int number = 10;
+		Pageable firstPageWithTwoElements = PageRequest.of(start,number);
+		return productRepository.findAll(firstPageWithTwoElements);
+	}
+	
 	
 	public Product convertFromProductDto(ProductDTO dto) {
 		Product product = new Product();

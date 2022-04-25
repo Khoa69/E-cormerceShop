@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,6 +43,12 @@ public class ProductApi {
 	public List<Product> getAllProduct() {	
 		List<Product> listProduct = productService.getAllProduct();
 		return listProduct;
+	}
+	
+	@GetMapping("/page/{index}")
+	public Page<Product> getAllPageProduct(@PathVariable("index") long i) {	
+		Page<Product> pageProduct = productService.getPageProduct(i);
+		return pageProduct;
 	}
 	
 	@PostMapping(value = "/save")
