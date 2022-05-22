@@ -99,7 +99,8 @@ function OrderDetail({ order }) {
                         <p>Total: {formatNumber(total)}</p>
                     </div>
                     <div className="text-gray-500">
-                        <p>Status: {order?.status}</p>
+                        <p>Status: {order.checked ? order.checked === 1 ? order.status === "shipped" ? <i class="fa-solid fa-circle-check"></i>
+                        : <i class="fas fa-shipping-fast"></i> : <i class="fa-solid fa-ban"></i> : <i class="fa fa-pause" aria-hidden="true"></i>}</p>
                         <p>Shipper: {order?.shipper?.username}</p>
                         <p>Payment: {order.checked ? "Credit card" : "COD"}</p>
                     </div>

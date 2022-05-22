@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { useAlert } from "react-alert";
 import { useNavigate } from "react-router-dom";
+import { validateScriptTag } from "../service/validate";
 
 const theme = createTheme();
 
@@ -29,12 +30,34 @@ export default function SignUp() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    
     const handleSubmit = async (event) => {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         event.preventDefault();
         // const data = new FormData(event.currentTarget);
 
+       if(validateScriptTag(email)){
+        return alert.error("Email have script tag!");
+       }
+
+       if(validateScriptTag(username)){
+        return alert.error("Username have script tag!");
+       }
+       if(validateScriptTag(fullName)){
+        return alert.error("FullName have script tag!");
+       }
+       if(validateScriptTag(password)){
+        return alert.error("Password have script tag!");
+       }
+
+        if (!email.match(mailformat)){
+            return alert.error("Email incorrect!");
+        }
         if (confirmPassword !== password) {
-            return alert.error("Password confirm doesn't match");
+            return alert.error("Password confirm doesn't match!");
+        }
+        if(password.length<5){
+            return alert.error("Password is more than 5 character!");
         }
 
         await axios
@@ -73,7 +96,7 @@ export default function SignUp() {
                         onSubmit={handleSubmit}
                         sx={{ mt: 3 }}
                     >
-                        <Grid container spacing={2}>
+                        <Grid container spacing={4}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     autoComplete="given-name"

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useAlert } from "react-alert";
 import { useGlobalContext } from "../../context/context";
 import { Link } from "react-router-dom";
@@ -11,9 +11,12 @@ import Login from "../login/LogIn";
 
 function Orders() {
     const alert = useAlert();
+    const wait = useRef();
+    const { orders, formatNumber, checkLogin,fetchOrders } = useGlobalContext();
 
-    const { orders, formatNumber, checkLogin } = useGlobalContext();
-
+    useEffect(() => {
+        wait.current = setInterval(fetchOrders,3000);
+    },[])
     const handleDelete = async (id) => {
         await axios
             .delete(`http://localhost:8080/doubleK/api/order/${id}`, {
@@ -110,7 +113,7 @@ function Orders() {
         <div className="orderList">
             <h1 className="orderTitle">Orders</h1>
             <DataGrid
-                rows={orders}
+                rows={orders.current}
                 disableSelectionOnClick
                 columns={columns}
                 getRowId={(row) => row.orderId}

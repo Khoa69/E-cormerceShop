@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
+import { useAlert } from "react-alert";
 
 const AppContext = React.createContext();
 
@@ -10,7 +11,8 @@ function AppProvider({ children }) {
     const [laptops, setLaptops] = useState([]);
     const [users, setUsers] = useState([]);
     const [admin, setAdmin] = useState({});
-    const [orders, setOrders] = useState([]);
+    const orders = useRef();
+    // const alert = useAlert();
     const [credits, setCredits] = useState([]);
 
     const checkLogin = () => {
@@ -178,9 +180,12 @@ function AppProvider({ children }) {
         );
 
         if (res.data) {
-            setOrders(res.data);
+            if (res.data.length > orders.current?.length){
+                alert("New Order !")
+            }
+            orders.current =res.data
         } else {
-            setOrders([]);
+            orders.current = []
         }
     };
 
@@ -241,6 +246,7 @@ function AppProvider({ children }) {
                 admin,
                 setAdmin,
                 logOut,
+                fetchOrders,
                 formatNumber,
                 formatCreditNumber,
                 checkLogin,
